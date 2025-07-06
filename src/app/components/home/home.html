@@ -1,0 +1,9 @@
+<!-- home.component.html -->
+<div class="min-h-screen w-screen sm:p-6 p-4 py-0 sm:py-0 relative bg-base-100 transition-colors duration-300 overflow-hidden">
+  <app-navbar 
+    [isDarkTheme]="isDarkTheme" 
+    (themeToggled)="toggleTheme()">
+  </app-navbar>
+  
+  <app-main-content [isDarkTheme]="isDarkTheme"></app-main-content>
+</div>
