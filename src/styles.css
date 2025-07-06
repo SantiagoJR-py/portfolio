@@ -1,2 +1,42 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* Cursor principal (espada) */
+html, body {
+    cursor: url('/img/minecraft-sword.png') 16 48, auto;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+/* Cursor para elementos interactivos (pico) */
+a, button, img, svg, .clickable, [class*="btn"], [role="button"] {
+  cursor: url('/img/minecraft-pickaxe.png') 16 48, pointer;
+  /* Mismas coordenadas para consistencia */
+}
+
+/* Opcional: cursor especial para inputs */
+input, textarea, select {
+  cursor: url('/img/minecraft-axe.png') 16 48, text;
+}
+
+/* Efecto de cursor que parece estar DETRÁS del blur */
+.cursor-glowing-dot {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(100, 200, 255, 0.15) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9; /* Asegúrate que esté entre el blur (z-10) y el fondo (z-0) */
+  mix-blend-mode: screen;
+  filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.1s linear;
+}

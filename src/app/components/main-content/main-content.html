@@ -1,42 +1,48 @@
-<!-- main-content.component.html -->
-<div class="relative" style="height: calc(100vh - 4rem);">
+<div class="relative h-[calc(100vh-4rem)] overflow-hidden">
   <!-- Shape generator background -->
   <div class="absolute inset-0 overflow-hidden z-0">
     <app-shape-generator class="block h-full w-full"></app-shape-generator>
   </div>
-  
-  <!-- Main container with better mobile spacing -->
-  <div class="absolute inset-0 z-10 border-2 border-base-content/10 rounded-t-3xl sm:rounded-t-4xl backdrop-blur-sm shadow-inner overflow-y-auto">
-    <div class="container mx-auto h-full flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-12 p-4 sm:p-6">
-      <!-- Text container with responsive adjustments -->
-      <div class="lg:w-1/2 w-full pointer-events-auto space-y-4 sm:space-y-6 animate-fadeIn pt-4 sm:pt-0">
-        <div class="overflow-hidden text-center sm:text-left">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-primary dark:to-accent bg-clip-text text-transparent overflow-visible whitespace-normal sm:whitespace-nowrap border-none sm:border-r-4 sm:border-r-purple-600 dark:sm:border-r-accent">
-            Full-Stack Developer
-          </h1>
-        </div>
-        
-        <div class="space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg">
-          <p>
-            👋 Hello! I'm <span class="font-bold text-purple-600 dark:text-accent">Santiago Jiménez</span>, a passionate <span class="font-semibold text-blue-600 dark:text-primary">19-year-old</span> developer with over <span class="font-semibold text-indigo-600 dark:text-secondary">2.5 years</span> of experience.
+
+  <!-- Main container con fondo difuso general -->
+  <div class="absolute overflow-hidden inset-0 z-10 border-2 border-base-content/10 rounded-3xl sm:rounded-4xl backdrop-blur-sm shadow-inner p-6 sm:p-8">
+    <!-- fondo blur con gradient -->
+    <div class="absolute -inset-4 sm:-inset-6 -z-10 bg-gradient-to-br from-blue-400/30 via-indigo-300/20 to-purple-400/30 
+      dark:from-primary/30 dark:via-secondary/20 dark:to-accent/30 rounded-3xl blur-2xl opacity-80">
+    </div>
+
+    <div class="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-12 h-full relative">
+      <!-- Text container -->
+      <div class="lg:w-1/2 w-full pointer-events-auto space-y-4 sm:space-y-6 animate-fadeIn text-center sm:text-left">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#3f37c9] to-[#b5179e] dark:from-primary dark:to-accent bg-clip-text text-transparent">
+          Full-Stack Developer
+        </h1>
+
+        <p class="text-sm sm:text-base md:text-lg">
+          👋 Hello! I'm <span class="font-bold text-purple-600 dark:text-accent">Santiago Jiménez</span>, a 
+          <span class="font-semibold text-blue-600 dark:text-primary">19-year-old</span> developer 
+          with over <span class="font-semibold text-indigo-600 dark:text-secondary">2.5 years</span> of experience.
+        </p>
+
+        <p class="text-sm sm:text-base md:text-lg">
+          💻 I build <span class="font-medium text-blue-600 dark:text-primary">fast</span>, 
+          <span class="font-medium text-indigo-600 dark:text-secondary">scalable</span> and 
+          <span class="font-medium text-purple-600 dark:text-accent">efficient</span> applications 
+          using Angular, Node.js & Tailwind.
+        </p>
+
+        <p class="text-sm sm:text-base md:text-lg">
+          🚀 Passionate about transforming ideas into 
+          <span class="italic">digital products</span> that make a difference.
+        </p>
+
+        <div class="pt-2 sm:pt-4">
+          <p class="text-xs sm:text-sm text-base-content/70 animate-pulse">
+            ↓ Scroll to explore my work ↓
           </p>
-          
-          <p>
-            💻 My web development journey began as a teenager. I build <span class="font-medium text-blue-600 dark:text-primary">fast</span>, <span class="font-medium text-indigo-600 dark:text-secondary">scalable</span>, and <span class="font-medium text-purple-600 dark:text-accent">efficient</span> applications.
-          </p>
-          
-          <p>
-            🚀 I love transforming ideas into <span class="italic">digital products</span> that help people.
-          </p>
-          
-          <div class="pt-2 sm:pt-4">
-            <p class="text-xs sm:text-sm text-base-content/70 animate-pulse">
-              ↓ Scroll to see my projects and skills ↓
-            </p>
-          </div>
         </div>
       </div>
-      
+
       <!-- Responsive image container -->
       <div class="lg:w-1/2 w-full flex justify-center pointer-events-auto mt-4 sm:mt-0">
         <div class="relative w-full max-w-xs sm:max-w-md md:max-w-xl aspect-square hover:scale-105 transition-transform duration-500">
@@ -45,7 +51,7 @@
             alt="Santiago Jiménez - Full Stack Developer"
             class="rounded-2xl object-cover w-full h-full shadow-xl sm:shadow-2xl border-2 sm:border-4 border-base-content/20 hover:border-purple-500/50 dark:hover:border-accent/50 transition-all duration-300"
           >
-          <div class="absolute -inset-4 sm:-inset-6 md:-inset-8 -z-10 bg-gradient-to-br from-blue-400/30 via-indigo-300/20 to-purple-400/30 dark:from-primary/30 dark:via-secondary/20 dark:to-accent/30 rounded-3xl blur-md opacity-80 hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute -inset-4 sm:-inset-6 md:-inset-8 -z-10 bg-gradient-to-br from-blue-400/30 via-indigo-300/20 to-purple-400/30 dark:from-primary/30 dark:via-secondary/20 dark:to-accent/30 rounded-3xl blur-2xl opacity-80"></div>
         </div>
       </div>
     </div>

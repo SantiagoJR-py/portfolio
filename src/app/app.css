@@ -1,0 +1,9 @@
+/* En tu componente con blur */
+.blur-container {
+  z-index: 10; /* El blur debe estar sobre el efecto */
+}
+
+/* Shape generator de fondo */
+.shape-generator {
+  z-index: 0; /* Fondo */
+}
