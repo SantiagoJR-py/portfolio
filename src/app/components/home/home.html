@@ -1,9 +1,13 @@
 <!-- home.component.html -->
-<div class="min-h-screen w-screen sm:p-6 p-4 py-0 sm:py-0 relative bg-base-100 transition-colors duration-300 overflow-hidden">
+<div class="min-h-screen w-screen sm:p-6 p-4 py-0 sm:py-0 relative bg-base-100 transition-colors duration-300 overflow-x-hidden">
   <app-navbar 
     [isDarkTheme]="isDarkTheme" 
     (themeToggled)="toggleTheme()">
   </app-navbar>
   
   <app-main-content [isDarkTheme]="isDarkTheme"></app-main-content>
+<div class="mt-8 container mx-auto max-w-full">
+  <app-about-me></app-about-me>
+</div>
+
 </div>

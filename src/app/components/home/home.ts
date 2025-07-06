@@ -2,11 +2,12 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../../shared/navbar/navbar';
 import { MainContentComponent } from '../main-content/main-content';
+import { AboutMe } from "../about-me/about-me";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, MainContentComponent],
+  imports: [NavbarComponent, MainContentComponent, AboutMe],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
