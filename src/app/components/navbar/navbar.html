@@ -1,0 +1,75 @@
+<header class="fixed inset-x-0 top-0 z-50">
+  <div class="glass border-b border-base-content/10">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
+      <a href="#top" class="group flex items-center gap-2">
+        <span
+          class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary via-secondary to-accent font-bold text-primary-content shadow-lg shadow-primary/30"
+        >SJ</span>
+        <span class="hidden text-sm font-semibold tracking-wide sm:block">
+          Santiago<span class="text-primary">.</span>dev
+        </span>
+      </a>
+
+      <nav class="hidden items-center gap-1 md:flex">
+        @for (l of links; track l.href) {
+          <a
+            [href]="l.href"
+            class="rounded-lg px-3 py-2 text-sm font-medium text-base-content/80 transition hover:bg-base-content/5 hover:text-primary"
+          >{{ l.label }}</a>
+        }
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          class="btn btn-circle btn-ghost btn-sm"
+          [attr.aria-label]="theme() === 'night' ? 'Activar tema claro' : 'Activar tema oscuro'"
+          (click)="toggleTheme()"
+        >
+          @if (theme() === 'night') {
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-warning">
+              <path d="M12 4.5a1 1 0 0 1 1 1V7a1 1 0 1 1-2 0V5.5a1 1 0 0 1 1-1Zm0 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm7.5-4.5a1 1 0 0 1-1 1H17a1 1 0 1 1 0-2h1.5a1 1 0 0 1 1 1Zm-13 0a1 1 0 0 1-1 1H4a1 1 0 1 1 0-2h1.5a1 1 0 0 1 1 1ZM12 17a1 1 0 0 1 1 1v1.5a1 1 0 1 1-2 0V18a1 1 0 0 1 1-1Zm5.3-9.3a1 1 0 0 1 0 1.4l-1 1a1 1 0 1 1-1.4-1.4l1-1a1 1 0 0 1 1.4 0Zm-8.6 8.6a1 1 0 0 1 0 1.4l-1 1a1 1 0 1 1-1.4-1.4l1-1a1 1 0 0 1 1.4 0Zm8.6 1.4-1-1a1 1 0 1 1 1.4-1.4l1 1a1 1 0 1 1-1.4 1.4Zm-8.6-8.6-1-1a1 1 0 1 1 1.4-1.4l1 1a1 1 0 1 1-1.4 1.4Z"/>
+            </svg>
+          } @else {
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-primary">
+              <path d="M21.64 13A9 9 0 1 1 11 2.36a1 1 0 0 1 1.05 1.36A7 7 0 0 0 20.28 12a1 1 0 0 1 1.36 1Z"/>
+            </svg>
+          }
+        </button>
+
+        <a href="#contact" class="btn btn-primary btn-sm hidden sm:inline-flex">Contáctame</a>
+
+        <button
+          type="button"
+          class="btn btn-circle btn-ghost btn-sm md:hidden"
+          aria-label="Abrir menú"
+          (click)="menuOpen.set(!menuOpen())"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+            @if (menuOpen()) {
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6"/>
+            } @else {
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/>
+            }
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    @if (menuOpen()) {
+      <nav class="border-t border-base-content/10 md:hidden">
+        <ul class="flex flex-col px-4 py-2">
+          @for (l of links; track l.href) {
+            <li>
+              <a
+                [href]="l.href"
+                (click)="closeMenu()"
+                class="block rounded-lg px-3 py-2 text-sm font-medium text-base-content/80 hover:bg-base-content/5 hover:text-primary"
+              >{{ l.label }}</a>
+            </li>
+          }
+        </ul>
+      </nav>
+    }
+  </div>
+</header>

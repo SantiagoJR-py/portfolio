@@ -1,0 +1,63 @@
+<section id="education" class="relative py-24 md:py-32">
+  <div class="mx-auto max-w-7xl px-4 md:px-8">
+    <div class="mb-14 max-w-2xl">
+      <p class="mb-4 font-mono text-sm uppercase tracking-widest text-primary">/ 05 · formación</p>
+      <h2 class="section-title">
+        Educación y <span class="text-gradient">habilidades blandas</span>.
+      </h2>
+    </div>
+
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <h3 class="mb-6 text-sm font-semibold uppercase tracking-widest text-base-content/60">
+          Formación &amp; certificaciones
+        </h3>
+        <ul class="space-y-3">
+          @for (e of education; track e.title) {
+            <li class="glass card-hover flex items-center gap-4 rounded-2xl p-5">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-2xl">
+                {{ e.icon }}
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <p class="font-semibold">{{ e.title }}</p>
+                  <span
+                    class="font-mono text-xs"
+                    [class.text-success]="e.ongoing"
+                    [class.text-base-content\/60]="!e.ongoing"
+                  >{{ e.year }}</span>
+                </div>
+                <p class="truncate text-sm text-base-content/60">{{ e.org }}</p>
+              </div>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="lg:col-span-5">
+        <h3 class="mb-6 text-sm font-semibold uppercase tracking-widest text-base-content/60">
+          Habilidades blandas
+        </h3>
+        <div class="glass rounded-2xl p-6">
+          <ul class="space-y-3">
+            @for (s of softSkills; track s) {
+              <li class="flex items-start gap-3">
+                <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-[11px] text-primary-content">
+                  ✓
+                </span>
+                <span class="text-sm text-base-content/80">{{ s }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <div class="mt-6 rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-6">
+          <p class="font-mono text-xs uppercase tracking-widest text-primary">Filosofía</p>
+          <p class="mt-2 text-base-content/80">
+            <span class="italic">“El mejor código es el que alguien más, en seis meses, puede leer, mantener y extender sin rabia.”</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+<section id="contact" class="relative py-24 md:py-32">
+  <div class="mx-auto max-w-7xl px-4 md:px-8">
+    <div class="relative overflow-hidden rounded-3xl border border-base-content/10 bg-gradient-to-br from-base-200 via-base-100 to-base-200 p-8 md:p-14">
+      <div aria-hidden="true" class="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-primary/30 blur-3xl"></div>
+      <div aria-hidden="true" class="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-secondary/30 blur-3xl"></div>
+
+      <div class="relative grid gap-10 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="mb-4 font-mono text-sm uppercase tracking-widest text-primary">/ 06 · contacto</p>
+          <h2 class="section-title">
+            ¿Tienes una idea?<br />
+            <span class="text-gradient">Construyámosla juntos.</span>
+          </h2>
+          <p class="mt-5 max-w-lg text-base-content/70">
+            Estoy abierto a oportunidades full-stack, freelance o colaboraciones que requieran ownership técnico,
+            entrega ágil y visión de producto. Respondo en menos de 24h.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="mailto:santiago.jr.dev@gmail.com" class="btn btn-primary shadow-lg shadow-primary/30">
+              Enviar email
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/573118682172" target="_blank" rel="noopener" class="btn btn-outline btn-secondary">
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <ul class="space-y-3">
+          @for (c of channels; track c.label) {
+            <li>
+              @if (c.href) {
+                <a [href]="c.href" target="_blank" rel="noopener"
+                  class="glass card-hover flex items-center justify-between rounded-2xl p-5">
+                  <div>
+                    <p class="font-mono text-xs uppercase tracking-widest text-base-content/50">{{ c.label }}</p>
+                    <p class="mt-1 font-medium">{{ c.value }}</p>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5 text-base-content/40">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7m0 0H8m9 0v9"/>
+                  </svg>
+                </a>
+              } @else {
+                <div class="glass flex items-center justify-between rounded-2xl p-5">
+                  <div>
+                    <p class="font-mono text-xs uppercase tracking-widest text-base-content/50">{{ c.label }}</p>
+                    <p class="mt-1 font-medium">{{ c.value }}</p>
+                  </div>
+                </div>
+              }
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer class="mt-20 border-t border-base-content/10 py-10">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 md:flex-row md:px-8">
+      <p class="font-mono text-xs text-base-content/50">
+        © {{ currentYear }} Santiago Jiménez Ramírez · Hecho con Angular + Tailwind + DaisyUI
+      </p>
+      <p class="font-mono text-xs text-base-content/50">
+        Crafted with care in Colombia 🇨🇴
+      </p>
+    </div>
+  </footer>
+</section>

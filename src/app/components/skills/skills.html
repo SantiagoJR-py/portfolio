@@ -1,0 +1,61 @@
+<section id="stack" class="relative py-24 md:py-32">
+  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-base-content/15 to-transparent"></div>
+
+  <div class="mx-auto max-w-7xl px-4 md:px-8">
+    <div class="mb-14 flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-2xl">
+        <p class="mb-4 font-mono text-sm uppercase tracking-widest text-primary">/ 02 · stack</p>
+        <h2 class="section-title">
+          Las herramientas que <span class="text-gradient">manejo</span>.
+        </h2>
+        <p class="mt-4 text-base-content/70">
+          Un stack moderno que uso día a día para construir productos rápidos, mantenibles y seguros.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      @for (g of groups; track g.title) {
+        <article class="glass card-hover relative overflow-hidden rounded-2xl p-6">
+          <div class="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-primary/10 blur-2xl"></div>
+          <div class="flex items-baseline justify-between">
+            <h3 class="text-lg font-bold">{{ g.title }}</h3>
+            <span class="font-mono text-[10px] uppercase tracking-widest text-base-content/50">{{ g.tag }}</span>
+          </div>
+          <div class="mt-5 grid grid-cols-3 gap-3">
+            @for (item of g.items; track item.name) {
+              <div class="group relative flex flex-col items-center gap-2 rounded-xl border border-base-content/5 bg-base-200/40 p-3 transition hover:-translate-y-1 hover:border-primary/40 hover:bg-base-200">
+                @if (item.iconDark) {
+                  <img [src]="item.icon" [alt]="item.name" class="theme-light-only h-9 w-9 transition group-hover:scale-110" loading="lazy" />
+                  <img [src]="item.iconDark" [alt]="item.name" class="theme-night-only h-9 w-9 transition group-hover:scale-110" loading="lazy" />
+                } @else {
+                  <img [src]="item.icon" [alt]="item.name" class="h-9 w-9 transition group-hover:scale-110" loading="lazy" />
+                }
+                <span class="text-[11px] font-medium text-base-content/70">{{ item.name }}</span>
+              </div>
+            }
+          </div>
+        </article>
+      }
+    </div>
+
+    <div class="relative mt-14 overflow-hidden rounded-2xl border border-base-content/10 bg-base-200/30 py-6">
+      <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-base-100 to-transparent"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-base-100 to-transparent"></div>
+      <div class="flex w-max gap-10 animate-marquee">
+        @for (t of marquee; track $index) {
+          <div class="flex items-center gap-3 whitespace-nowrap">
+            @if (t.iconDark) {
+              <img [src]="t.icon" [alt]="t.name" class="theme-light-only h-7 w-7" loading="lazy" />
+              <img [src]="t.iconDark" [alt]="t.name" class="theme-night-only h-7 w-7" loading="lazy" />
+            } @else {
+              <img [src]="t.icon" [alt]="t.name" class="h-7 w-7" loading="lazy" />
+            }
+            <span class="font-mono text-sm text-base-content/70">{{ t.name }}</span>
+            <span class="text-base-content/30">·</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
