@@ -11,7 +11,7 @@ export class ExperienceComponent {
       role: 'Full-Stack Developer',
       company: 'BSC Colombia SAS',
       period: '2023 – Presente',
-      duration: '2+ años',
+      duration: '3+ años',
       current: true,
       description:
         'Desarrollo y mantenimiento de plataformas web para programas sociales del Ministerio de Igualdad de Colombia. Trabajo en equipos Scrum con sprints acelerados, modernizando sistemas legacy y construyendo soluciones escalables.',
